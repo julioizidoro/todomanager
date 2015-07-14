@@ -88,12 +88,12 @@
             <p:commandButton value="Fechar" icon=" ui-icon-close" class="botaoDialog" onclick="notificacao.hide();"/>   
         </p:dialog>
         
-        <p:dialog id="dialog_addTarefaparticular" header="Adicionar Tarafa Particular" widgetVar="addparticular" resizable="false"  class="dialog" width="40%" height="60%">
+        <p:dialog id="dialog_addTarefaparticular" header="Adicionar Tarafa Particular" widgetVar="addparticular" resizable="false"  class="dialog" width="31%" height="60%">
             <br></br>
             <p:outputLabel value="Título" class="filtrar"/>
             <p:outputLabel value="Data" class="left4"/>
             <br></br><br></br>
-            <p:inputText value="#{AtividadeMB.atividades.nome}" size="48" class="filtrar"/>
+            <p:inputText value="#{AtividadeMB.atividades.nome}" size="46" class="filtrar"/>
             <p:calendar id="prazo2" size="10"  pattern="dd/MM/yyyy" mask="true"  maxlength="14" class="botaoDialog3" value="#{AtividadeMB.atividades.prazo}" >
                 <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
             </p:calendar>
