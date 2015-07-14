@@ -624,6 +624,7 @@ button.contabilidade {
     border:0px;
 }  
 .dialog{
+    margin-top:-10px;
     font-size: 12px;
 }
 .botaoDialog{

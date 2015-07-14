@@ -88,7 +88,7 @@
             <p:commandButton value="Fechar" icon=" ui-icon-close" class="botaoDialog" onclick="notificacao.hide();"/>   
         </p:dialog>
         
-        <p:dialog id="dialog_addTarefaparticular" header="Adicionar Tarafa Particular" widgetVar="addparticular" resizable="false"  class="dialog" width="31%" height="60%">
+        <p:dialog id="dialog_addTarefaparticular" header="Adicionar Tarafa Particular" widgetVar="addparticular" resizable="false"  class="dialog" minWidth= "120" minHeight= "25"  width="440px" >
             <br></br>
             <p:outputLabel value="Título" class="filtrar"/>
             <p:outputLabel value="Data" class="left4"/>
@@ -110,7 +110,7 @@
             <p:commandButton value="Confirmar" icon="ui-icon-plusthick" class="filtrar" action="#{AtividadeMB.salvarParticular()}" onclick="addparticular.hide();" update="growl"/>
         </p:dialog>
         
-        <p:dialog id="dialog_addTarefa" header="Adicionar Tarafas" widgetVar="add" resizable="false"  class="dialog" width="40%" height="60%">
+        <p:dialog id="dialog_addTarefa" header="Adicionar Tarafas" widgetVar="add" resizable="false"  class="dialog" minWidth= "120" minHeight= "25"  width="550px" >
             <br></br>
             <p:outputLabel value="Título" class="filtrar"/>
             <p:outputLabel value="Data" class="left3"/>
