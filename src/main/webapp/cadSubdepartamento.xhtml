@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/WEB-INF/templates/default.xhtml">
+        <ui:define name="corpo">
+            <h:form>
+                <div id="centro2" >
+                      <legend class="titulo">Cadastro de Sub-Departamento</legend>
+                     <br></br> 
+                            <h:panelGrid columns="6" cellpadding="5">   
+                                <p:outputLabel value="Departamento" for="departamento" class="left1"/>
+                                <p:outputLabel value="Nome Sub-Departamento" for="nome" class="left4"/>
+                            </h:panelGrid>       
+                            <h:panelGrid columns="6" cellpadding="5"> 
+
+                                <p:selectOneMenu id="departamento" value="#{SubdepartamentoMB.idDepartamento}" class="left1" style="width:224px">
+
+                                    <f:selectItem itemLabel="Selecione" itemValue="sn"   />
+                                    <f:selectItems value="#{SubdepartamentoMB.listaDepartamento}" var="departamentoSelecionado" itemLabel="#{departamentoSelecionado.nome}" itemValue="#{departamentoSelecionado.iddepartamento}"/>
+                                </p:selectOneMenu>
+                                <p:inputText id="nome" value="#{SubdepartamentoMB.subdepartamento.nome}"  size="42" class="filtrar2"/>
+                            </h:panelGrid> 
+                    <br></br>
+                     <p:commandButton icon=" ui-icon-check" value="Confirmar" class="cadastro4" action="#{SubdepartamentoMB.salvar()}"/>  
+                    <p:commandButton icon=" ui-icon-close " value="Cancelar" class="cancelar" action="#{MenuMB.subdepartamento()}"/> 
+                </div>
+                
+            </h:form>     
+
+        </ui:define>
+    </ui:composition>
+</html>
+

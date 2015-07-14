@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/WEB-INF/templates/default.xhtml">
+        <ui:define name="corpo">
+            <h:form>
+                <div id="centro2" >
+                    <legend class="titulo">Cadastro de Cliente</legend>
+                    <legend class="subtitulo">Dados do Cliente</legend>
+                    <h:panelGrid columns="3" cellpadding="3" width="750px;">
+                        <p:outputLabel value="Razão Social" for="razaosocial"  class="left11" /> 
+                        <p:outputLabel value="CNPJ" for="cnpj"  class="left12" /> 
+                        <p:outputLabel value="Telefone" for="telefone"  class="left13" /> 
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" cellpadding="5">
+                        <p:inputText id="razaosocial"   size="41" maxlength="100" class="left1"  value="#{ClienteMB.cliente.razaosocial}" />
+                        <p:inputMask id="cnpj" size="24" maxlength="100" class="filtrar" mask="99.999.999/9999-99" value="#{ClienteMB.cliente.cnpj}"/>
+                        <p:inputMask id="telefone" size="24" maxlength="100" class="filtrar4" mask="(99)9999-9999" value="#{ClienteMB.cliente.telefone}"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" cellpadding="3" width="750px;">
+                        <p:outputLabel value="Nome Fantasia" for="nomefantasia"  class="left14" /> 
+                        <p:outputLabel value="Pessoa de Contato" for="contato"  class="left15" /> 
+                        <p:outputLabel value="Email" for="email"  class="left16" /> 
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" cellpadding="5">
+                        <p:inputText id="nomefantasia"   size="41" maxlength="100" class="left1"  value="#{ClienteMB.cliente.nomefantasia}"/>
+                        <p:inputText id="contato"   size="21" maxlength="100" class="filtrar"  value="#{ClienteMB.cliente.contato}" />
+                        <p:inputText id="email"   size="35" maxlength="100" class="filtrar"  value="#{ClienteMB.cliente.email}" />
+                    </h:panelGrid>
+                    <h:panelGrid columns="4" cellpadding="5" width="850px;">
+                        <p:outputLabel value="Tipo Logradouro"  class="left15" />
+                        <p:outputLabel value="Logradouro" for="logra" class="left17" />
+                        <p:outputLabel value="Número" for="numero"  class="left18"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" cellpadding="3">
+                        <p:selectOneMenu id="tipologra" value="#{ClienteMB.cliente.tipogradouro}" style="width:195px" class="leftcombo">
+                            <f:selectItem itemLabel="Selecione" itemValue="sn" noSelectionOption="true"/> 
+                            <f:selectItem itemLabel="Rua" itemValue="Rua" />  
+                            <f:selectItem itemLabel="Rodivia" itemValue="Rodivia" />  
+                            <f:selectItem itemLabel="Estrada" itemValue="Estrada" />  
+                            <f:selectItem itemLabel="Servidão" itemValue="Servidão" />  
+                            <f:selectItem itemLabel="BR" itemValue="BR" />       
+                        </p:selectOneMenu>
+                        <p:inputText id="logra"   size="51"  class="filtrar" value="#{ClienteMB.cliente.logradouro}"/>
+                        <p:inputMask id="numero"   size="16"  class="filtrar" value="#{ClienteMB.cliente.numero}" mask="?999999999"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="6" cellpadding="5" width="750px;">   
+                        <p:outputLabel value="Complemento" for="comple" class="left14"/>
+                        <p:outputLabel value="Bairro" for="bairro" class="left3"/>
+                    </h:panelGrid>       
+                    <h:panelGrid columns="6" cellpadding="5">   
+                        <p:inputText id="comple"  size="53" class="left7" value="#{ClienteMB.cliente.complemento}"/>
+                        <p:inputText id="bairro" value="#{ClienteMB.cliente.bairro}"  size="42" class="filtrar2"/>
+                    </h:panelGrid> 
+                    <h:panelGrid columns="3" cellpadding="5">
+                        <p:outputLabel value="Cidade" for="cidade" class="left1"/>
+                        <p:outputLabel value="Estado" class="left4"/>
+                        <p:outputLabel value="CEP" for="cep" class="left"/>
+                    </h:panelGrid>
+                     <h:panelGrid columns="3" cellpadding="5">
+                         <p:inputText id="cidade" value="#{ClienteMB.cliente.cidade}"  size="45" class="left8"/>
+                         <p:selectOneMenu id="estado" value="#{ClienteMB.cliente.estado}" class="filtrar" style="width:144px">
+                            <f:selectItem itemLabel="Selecione o Estado" itemValue="sn" noSelectionOption="true"/> 
+                            <f:selectItem itemLabel="Acre" itemValue="AC" /> 
+                            <f:selectItem itemLabel="Alagoas" itemValue="AL" /> 
+                            <f:selectItem itemLabel="Amapá" itemValue="AP" />  
+                            <f:selectItem itemLabel="Amazonas" itemValue="AM" />  
+                            <f:selectItem itemLabel="Bahia" itemValue="BA" />  
+                            <f:selectItem itemLabel="Ceará" itemValue="CE" />  
+                            <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />  
+                            <f:selectItem itemLabel="Espirito Santo" itemValue="ES" />  
+                            <f:selectItem itemLabel="Goiás" itemValue="GO" />  
+                            <f:selectItem itemLabel="Maranhão" itemValue="MA" />  
+                            <f:selectItem itemLabel="Mato Grosso" itemValue="MT" />  
+                            <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="MS" />  
+                            <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />  
+                            <f:selectItem itemLabel="Pará" itemValue="PA" />  
+                            <f:selectItem itemLabel="Paraíba" itemValue="PB" />  
+                            <f:selectItem itemLabel="Paraná" itemValue="PR" />  
+                            <f:selectItem itemLabel="Pernambuco" itemValue="PE" />  
+                            <f:selectItem itemLabel="Piauí" itemValue="PI" />  
+                            <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />  
+                            <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />  
+                            <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />  
+                            <f:selectItem itemLabel="Rondônia" itemValue="RO" />  
+                            <f:selectItem itemLabel="Roraima" itemValue="RR" />  
+                            <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />  
+                            <f:selectItem itemLabel="São Paulo" itemValue="SP" />  
+                            <f:selectItem itemLabel="Sergipe" itemValue="SE" />  
+                            <f:selectItem itemLabel="Tocantins" itemValue="TO" /> 
+                        </p:selectOneMenu>
+                         <p:inputMask id="cep" size="15"  maxlength="9" class="filtrar2" value="#{ClienteMB.cliente.cep}" mask="99999-999"/>     
+                    </h:panelGrid>
+                    <br></br> 
+                    <legend class="subtitulo">Dados do Contrato</legend>
+                    <h:panelGrid columns="6" cellpadding="5">   
+                        <p:outputLabel value="Data 1º Contrato" for="primeiroContrato" class="left1"/>
+                        <p:outputLabel value="Data Renovação" for="dataRenovacao" class="left5"/>
+                    </h:panelGrid> 
+                    <h:panelGrid columns="6" cellpadding="5">   
+                        <p:calendar id="primeiroContrato"  pattern="dd/MM/yyyy" mask="true" size="12" maxlength="14" class="left9" value="#{ClienteMB.cliente.datacontrato}">
+                            <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+                        </p:calendar>
+                        <p:calendar id="dataRenovacao"  pattern="dd/MM/yyyy" mask="true" size="12" maxlength="14" class="left10" value="#{ClienteMB.cliente.datarenovacao}" >
+                            <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+                        </p:calendar>
+                    </h:panelGrid> 
+                    <p:selectBooleanCheckbox value="#{ClienteMB.cliente.contabilidade}"  class="left3">
+                        <p:ajax update="contabilidadeH" listener="#{ClienteMB.alterarComboBox()}" />
+                    </p:selectBooleanCheckbox>
+                    <p:outputLabel value="Contabilidade" class="Selecionarconcluida"/>
+
+                    <p:selectBooleanCheckbox value="#{ClienteMB.cliente.getaofinanceira}"  class="filtrar6">
+                        <p:ajax update="financeiraH" listener="#{ClienteMB.alterarComboBox()}" />
+                    </p:selectBooleanCheckbox>
+                    <p:outputLabel value="Financeiro" class="Selecionarconcluida"/>
+                    
+                    <p:selectBooleanCheckbox value="#{ClienteMB.cliente.tercerizacao}"  class="filtrar6">
+                        <p:ajax update="tercerizacaoH" listener="#{ClienteMB.alterarComboBox()}" />
+                    </p:selectBooleanCheckbox>
+                    <p:outputLabel value="Tercerização" class="Selecionarconcluida"/>
+                    
+                    <p:selectBooleanCheckbox value="#{ClienteMB.cliente.outros}"  class="filtrar6">
+                        <p:ajax update="outrosH" listener="#{ClienteMB.alterarComboBox()}" />
+                    </p:selectBooleanCheckbox>
+                    <p:outputLabel value="Outros" class="Selecionarconcluida"/>
+                    
+                    <h:panelGrid id="painelCombo" columns="6" cellpadding="5">   
+                        <p:inputText id="contabilidadeH"  size="21" class="rightleft3" value="#{ClienteMB.valorcontabilidade}"  readonly="#{ClienteMB.contabilidade}" immediate="true" />
+                        <p:inputText id="financeiraH" value="#{ClienteMB.valorgestaofinanceira}"  size="19" class="rightFiltrar" readonly="#{ClienteMB.gestaofinanceira}" immediate="true"/>
+                        <p:inputText id="tercerizacaoH" value="#{ClienteMB.valortercerizacao}"  size="21" class="rightFiltrar" readonly="#{ClienteMB.tercerizacao}" immediate="true" />
+                        <p:inputText id="outrosH" value="#{ClienteMB.valoroutros}"  size="22" class="rightFiltrar" readonly="#{ClienteMB.outros}" immediate="true" />
+                    </h:panelGrid> 
+                    <br></br>
+                    <br></br>
+                    <p:commandButton icon=" ui-icon-check" value="Confirmar" class="cadastro" action="#{ClienteMB.salvar()}"/>  
+                    <p:commandButton icon=" ui-icon-close " value="Cancelar" class="cancelar" action="#{MenuMB.cliente()}"/> 
+                    <br></br>
+                    <br></br>
+                </div>
+
+            </h:form>     
+
+        </ui:define>
+    </ui:composition>
+</html>
+

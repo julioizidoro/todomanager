@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/WEB-INF/templates/default.xhtml">
+        <ui:define name="corpo">
+            <h:form>
+                <div id="centro2" >
+                      <legend class="titulo">Cadastro de Rotina</legend>
+                     <br></br> 
+                     <p:panelGrid columns="3" styleClass="semBorda" class="semBorda" >
+                        <p:outputLabel value="Depatamento" class="fonte"/> 
+                        <p:outputLabel value="Sub-Depatamento" class="fonte"/> 
+                        <p:outputLabel value="Nome Rotina" class="fonte"/> 
+                        
+                        <p:selectOneMenu id="departamento" value="#{RotinaMB.idDepartamento}" class="fonte" style="width:145px">
+                            <f:selectItem itemLabel="Selecione" itemValue="0"   />
+                            <f:selectItems value="#{RotinaMB.listaDepartamento}" var="departamento" itemLabel="#{departamento.nome}" itemValue="#{departamento.iddepartamento}"/>
+                            <p:ajax event="change" listener="#{RotinaMB.gerarListaSubdepartamento()}" update="subdepartamento" />
+                        </p:selectOneMenu>
+                        <p:selectOneMenu id="subdepartamento" value="#{RotinaMB.idSubdepartamento}" class="fonte" style="width:140px">
+                            <f:selectItem itemLabel="Selecione" itemValue="0"   />
+                            <f:selectItems value="#{RotinaMB.listaSubdepartamento}" var="subdepartamentoSelecionado" itemLabel="#{subdepartamentoSelecionado.nome}" itemValue="#{subdepartamentoSelecionado.idsubdepartamento}"/>
+                        </p:selectOneMenu>
+                        <p:inputText id="nomerotina" size="30"  class="fonte"  value="#{RotinaMB.rotina.nome}" />
+                     </p:panelGrid>
+                    <p:dataTable var="cadRotina" value="#{RotinaMB.listaRotinabean}" class="dataGridcadastro" editable="true" editMode="cell" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+                                     rowIndexVar="rowIx">
+                        <p:column  style="width:30px;" styleClass="alinhaCentro">
+                            <p:selectBooleanCheckbox value="#{cadRotina.selecionado}"/>
+                        </p:column>
+                        <p:column headerText="Cliente" style="width:170px;" styleClass="border">
+                            <h:outputText value="#{cadRotina.cliente.nomefantasia}" />
+                        </p:column>
+
+                        <p:column headerText="Periodicidade" style="width:80px;" styleClass="border">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{cadRotina.rotinacliente.periodicidade}" /></f:facet>
+                                <f:facet name="input">
+                                    <h:selectOneMenu value="#{cadRotina.rotinacliente.periodicidade}" style="width:100%">
+                                        <f:selectItem itemLabel="Selecione" itemValue="sn"   />
+                                        <f:selectItem itemLabel="Diária" itemValue="diaria" />
+                                        <f:selectItem itemLabel="Semanal" itemValue="semanal" />
+                                        <f:selectItem itemLabel="Mensal" itemValue="mensal" />
+                                        <f:selectItem itemLabel="Trimestral" itemValue="trimestral" />
+                                        <f:selectItem itemLabel="Anual" itemValue="anual" />
+                                         <f:selectItem itemLabel="N/D" itemValue="nd" />
+                                    </h:selectOneMenu>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Data" style="width:60px;" styleClass="border">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{cadRotina.rotinacliente.data}" >
+                                        <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+                                    </h:outputText>
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:calendar pattern="dd/MM/yyyy" mask="true" size="12" maxlength="14" value="#{cadRotina.rotinacliente.data}" >
+                                        <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+                                    </p:calendar>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Responsável" style="width:70px;" styleClass="border">
+                            <p:cellEditor id="linhausuario">
+                                <f:facet name="output"><h:outputText value="#{cadRotina.rotinacliente.usuario.nome}" /></f:facet>
+                                <f:facet name="input">
+                                   <p:selectOneMenu  value="#{RotinaMB.idUsuario}" style="width:100%">
+                                    <f:selectItem itemLabel="Selecione" itemValue="0"   />
+                                    <f:selectItems value="#{RotinaMB.listaUsuario}" var="usuarioSelecionado" itemLabel="#{usuarioSelecionado.nome}" itemValue="#{usuarioSelecionado.idusuario}"/>
+                                    <p:ajax event="change" listener="#{RotinaMB.gravarusuario(rowIx)}" update="linhausuario"/>  
+                                </p:selectOneMenu>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        
+                        <p:column headerText="Prioridade" style="width:70px;" styleClass="border">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{RotinaMB.rotina.prioridade}" /></f:facet>
+                                <f:facet name="input">
+                                    <p:selectOneMenu id="prioridade" value="#{RotinaMB.rotina.prioridade}" style="width:100%">
+                                        <f:selectItem itemLabel="Selecione" itemValue="sn" noSelectionOption="true"/> 
+                                        <f:selectItem itemLabel="Normal" itemValue="normal" />
+                                        <f:selectItem itemLabel="Alta" itemValue="alta" />
+                                        <f:selectItem itemLabel="Urgente" itemValue="urgente" />
+                                    </p:selectOneMenu>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                    </p:dataTable>
+                    <br></br>
+                    <p:commandButton icon=" ui-icon-check" value="Confirmar" class="cadastro2" action="#{RotinaMB.salvar()}" update="@all"  oncomplete="popAprovar.hide(); #{meuBean.objetos}"/>  
+                    <p:commandButton icon=" ui-icon-close " value="Cancelar" class="cancelar" action="#{MenuMB.rotina()}"/> 
+                </div>
+                
+            </h:form>     
+
+        </ui:define>
+    </ui:composition>
+</html>
