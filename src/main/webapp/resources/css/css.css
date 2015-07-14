@@ -225,7 +225,7 @@ h1 {
     font-size: 14px;
     font-weight: bold;
     font-variant: small-caps;
-    margin-left:28%;
+    margin-left:316px;
     letter-spacing: 1.6pt;
     word-spacing: 1.6pt;
 }
@@ -287,7 +287,7 @@ button.botao1 {
 }
 .filtrar{
     font-size:12px;
-    margin-left:8%;
+    margin-left:20px;
 }
 .filtrar4{
     font-size:12px;
@@ -324,31 +324,7 @@ button.botao1 {
 }
 .left{
     font-size:12px;
-    margin-left:37%;
-}
-.left12{
-    font-size:12px;
-    margin-left:32%;
-}
-.left13{
-    font-size:12px;
-    margin-left:49%;
-}
-.left15{
-    font-size:12px;
-    margin-left:34%;
-}
-.left18{
-    font-size:12px;
-    margin-left:16%;
-}
-.left16{
-    font-size:12px;
-    margin-left:-53%;
-}
-.left17{
-    font-size:12px;
-    margin-left:-7%;
+    margin-left:200px;
 }
 button.cadastro4 {
     font-family: Arial, Helvetica, sans-serif;
@@ -574,28 +550,9 @@ button.contabilidade {
 }
 .left1{
     font-size:12px;
-    margin-left:34%;
+    margin-left:130px;
 }
-.left7{
-    font-size:12px;
-    margin-left:28.8%;
-}
-.left8{
-    font-size:12px;
-    margin-left:31.5%;
-}
-.left9{
-    font-size:12px;
-    margin-left:280%;
-}
-.left10{
-    font-size:12px;
-    margin-left:300%;
-}
-.leftcombo{
-    font-size:12px;
-    margin-left:38.8%;
-}
+
 .left2{
     font-size:12px;
     margin-left:185px;
@@ -611,14 +568,6 @@ button.contabilidade {
 .left6{
     font-size:12px;
     margin-left:270px;
-}
-.left11{
-    font-size:12px;
-    margin-left:38%;
-}
-.left14{
-    font-size:12px;
-    margin-left:47%;
 }
 .add{
     font-size:12px;
@@ -652,7 +601,7 @@ button.contabilidade {
 .rightleft3{
     text-align: right;
     font-size:12px;
-    margin-left:68.7%;
+    margin-left:322px;
 }
 .ui-datatable .ui-datatable-data .even-row td{  
     background-color:#E8E8E8;  

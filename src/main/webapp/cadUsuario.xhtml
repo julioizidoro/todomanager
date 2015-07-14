@@ -16,24 +16,24 @@
                                 <p:outputLabel value="Cargo" for="cargo" class="left3"/>
                             </h:panelGrid>       
                             <h:panelGrid columns="6" cellpadding="5">   
-                                <p:inputText id="nome"  size="44" class="left1" value="#{UsuarioMB.usuario.nome}"/>
-                                <p:inputText id="cargo" value="#{UsuarioMB.usuario.cargo}"  size="26" class="filtrar2"/>
+                                <p:inputText id="nome"  size="46" class="left1" value="#{UsuarioMB.usuario.nome}"/>
+                                <p:inputText id="cargo" value="#{UsuarioMB.usuario.cargo}"  size="28" class="filtrar2"/>
                             </h:panelGrid> 
                             <h:panelGrid columns="6" cellpadding="5">   
                                 <p:outputLabel value="Email " for="email" class="left1"/>
                                 <p:outputLabel value="Telefone" for="telefone" class="left3"/>
                             </h:panelGrid>       
                             <h:panelGrid columns="6" cellpadding="5">   
-                                <p:inputText id="email"  size="44" class="left1" value="#{UsuarioMB.usuario.email}"/>
-                                <p:inputMask id="telefone" size="26" maxlength="100" class="filtrar2" mask="(99)9999-9999" value="#{UsuarioMB.usuario.telefone}"/>
+                                <p:inputText id="email"  size="46" class="left1" value="#{UsuarioMB.usuario.email}"/>
+                                <p:inputMask id="telefone" size="28" maxlength="100" class="filtrar2" mask="(99)9999-9999" value="#{UsuarioMB.usuario.telefone}"/>
                             </h:panelGrid> 
                              <h:panelGrid columns="6" cellpadding="5">   
                                 <p:outputLabel value="Login " for="login" class="left1"/>
                                 <p:outputLabel value="Data de Nascimento" for="dataNasc" class="left3"/>
                             </h:panelGrid>       
                             <h:panelGrid columns="6" cellpadding="5">   
-                                <p:inputText id="login"  size="44" class="left1" value="#{UsuarioMB.usuario.login}"/>
-                                <p:calendar id="dataNasc"  pattern="dd/MM/yyyy" mask="true" size="21" maxlength="14" class="filtrar2" value="#{UsuarioMB.usuario.datanascimento}" >
+                                <p:inputText id="login"  size="46" class="left1" value="#{UsuarioMB.usuario.login}"/>
+                                <p:calendar id="dataNasc"  pattern="dd/MM/yyyy" mask="true" size="19" maxlength="14" class="filtrar2" value="#{UsuarioMB.usuario.datanascimento}" >
                                     <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
                                 </p:calendar>
                             </h:panelGrid> 

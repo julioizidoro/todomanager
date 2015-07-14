@@ -99,9 +99,7 @@ public class AtividadeMB implements Serializable{
 
     public AtividadeMB()  {
          atividadeMenu="dia";
-        if (atividades==null){
-            atividades = new Atividades();
-        }
+        atividades = new Atividades();
         comentarios = new Comentarios();
     }
 
@@ -525,9 +523,7 @@ public class AtividadeMB implements Serializable{
     
     
     
-    public void iniciarAtividade(){
-        atividades = new Atividades();
-    }
+    
     
     public String novo(){
         menuMB.gerarLitaNotificacao();
@@ -537,7 +533,7 @@ public class AtividadeMB implements Serializable{
             atividades.setEstado("Play");
             atividades.setMostratempo("00:00");
             idUsuario = String.valueOf(usuarioLogadoBean.getUsuario().getIdusuario());
-            idCliente = "1";
+            idCliente = "4";
             idDepartamento = String.valueOf(usuarioLogadoBean.getUsuario().getSubdepartamento().getDepartamento().getIddepartamento());
             gerarListaSubdepartamento();
             idSubdepartamento = String.valueOf(usuarioLogadoBean.getUsuario().getSubdepartamento().getIdsubdepartamento());
@@ -834,8 +830,8 @@ public class AtividadeMB implements Serializable{
         atividadeMenu="todas";
         calendarioMB.gerarEventos();
          titulo="Todas as Taferas";
-        return "tarefasTodas";
-         //return "teste";
+        //return "tarefasTodas";
+         return "teste";
     }
     
     public String mostarAtividadesDepartamento(){
@@ -1170,8 +1166,7 @@ public class AtividadeMB implements Serializable{
     
     public String verComentarios(String linha) {
        this.linha = linha;
-       ComentariosFacade comentariosFacade = new ComentariosFacade();
-       listaComentarios =  comentariosFacade.listar(listaAtividadesGeral.get(Integer.parseInt(linha)).getAtividades().getIdatividades());
+       listaComentarios =  listaAtividadesGeral.get(Integer.parseInt(linha)).getAtividades().getComentariosList();
        if (listaComentarios==null){
            listaComentarios = new ArrayList<Comentarios>();
        }
@@ -1201,7 +1196,7 @@ public class AtividadeMB implements Serializable{
          linha="0";
          atividades = new Atividades();
         carregarListaGeral();
-        return "inicial";
+        return null;
     }
     
     public void pegarLinha(String linha){

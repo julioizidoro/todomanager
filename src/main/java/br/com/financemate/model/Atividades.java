@@ -79,20 +79,9 @@ public class Atividades implements Serializable {
     private Cliente cliente;
     @Transient
     private boolean selecionado;
-    @Transient
-    private int contador;
 
 
     public Atividades() {
-    }
-
-    public int getContador() {
-        contador++;
-        return contador;
-    }
-
-    public void setContador(int contador) {
-        this.contador = contador;
     }
 
     public Atividades(Integer idatividades) {
@@ -120,8 +109,7 @@ public class Atividades implements Serializable {
     }
 
     public void setPrazo(Date prazo) {
-        contador++;
-            this.prazo = prazo;
+        this.prazo = prazo;
     }
 
     public String getPrioridade() {
