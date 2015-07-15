@@ -333,6 +333,11 @@ button.botao1 {
     font-size:12px;
     margin-left:48%;
 }
+.filtrar12{
+    position: relative;
+    font-size:12px;
+    margin-left:2%;
+}
 .alinhaCentro{
     text-align:center;
     border:#fff;
@@ -347,7 +352,12 @@ button.botao1 {
 .left{
      position:relative;
     font-size:12px;
-    margin-left:200px;
+    margin-left:775%;
+}
+.left17{
+     position:relative;
+    font-size:12px;
+    margin-left:640%;
 }
 button.cadastro4 {
     font-family: Arial, Helvetica, sans-serif;
@@ -578,6 +588,11 @@ button.contabilidade {
 }
 
 .left2{
+     position: relative;
+    font-size:12px;
+    margin-left:820%;
+}
+.left18{
      position: relative;
     font-size:12px;
     margin-left:185px;
