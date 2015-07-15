@@ -18,9 +18,9 @@
                         <p:outputLabel value="Telefone" for="telefone"  class="left2" /> 
                     </h:panelGrid>
                     <h:panelGrid columns="3" cellpadding="5">
-                        <p:inputText id="razaosocial"   size="41" maxlength="100" class="left1"  value="#{ClienteMB.cliente.razaosocial}" />
-                        <p:inputMask id="cnpj" size="24" maxlength="100" class="filtrar" mask="99.999.999/9999-99" value="#{ClienteMB.cliente.cnpj}"/>
-                        <p:inputMask id="telefone" size="24" maxlength="100" class="filtrar4" mask="(99)9999-9999" value="#{ClienteMB.cliente.telefone}"/>
+                        <p:inputText id="razaosocial"   size="38" maxlength="100" class="left1"  value="#{ClienteMB.cliente.razaosocial}" />
+                        <p:inputMask id="cnpj" size="22" maxlength="100" class="filtrar" mask="99.999.999/9999-99" value="#{ClienteMB.cliente.cnpj}"/>
+                        <p:inputMask id="telefone" size="22" maxlength="100" class="filtrar4" mask="(99)9999-9999" value="#{ClienteMB.cliente.telefone}"/>
                     </h:panelGrid>
                     <h:panelGrid columns="3" cellpadding="3">
                         <p:outputLabel value="Nome Fantasia" for="nomefantasia"  class="left1" /> 
@@ -28,9 +28,9 @@
                         <p:outputLabel value="Email" for="email"  class="filtrar4" /> 
                     </h:panelGrid>
                     <h:panelGrid columns="3" cellpadding="5">
-                        <p:inputText id="nomefantasia"   size="41" maxlength="100" class="left1"  value="#{ClienteMB.cliente.nomefantasia}"/>
-                        <p:inputText id="contato"   size="21" maxlength="100" class="filtrar"  value="#{ClienteMB.cliente.contato}" />
-                        <p:inputText id="email"   size="35" maxlength="100" class="filtrar"  value="#{ClienteMB.cliente.email}" />
+                        <p:inputText id="nomefantasia"   size="38" maxlength="100" class="left1"  value="#{ClienteMB.cliente.nomefantasia}"/>
+                        <p:inputText id="contato"   size="18" maxlength="100" class="filtrar"  value="#{ClienteMB.cliente.contato}" />
+                        <p:inputText id="email"   size="33" maxlength="100" class="filtrar"  value="#{ClienteMB.cliente.email}" />
                     </h:panelGrid>
                     <h:panelGrid columns="4" cellpadding="5">
                         <p:outputLabel value="Tipo Logradouro"  class="left1" />
@@ -38,7 +38,7 @@
                         <p:outputLabel value="Número" for="numero"  class="left4"/>
                     </h:panelGrid>
                     <h:panelGrid columns="3" cellpadding="3">
-                        <p:selectOneMenu id="tipologra" value="#{ClienteMB.cliente.tipogradouro}" style="width:195px" class="left1">
+                        <p:selectOneMenu id="tipologra" value="#{ClienteMB.cliente.tipogradouro}" style="width:190px" class="left1">
                             <f:selectItem itemLabel="Selecione" itemValue="sn" noSelectionOption="true"/> 
                             <f:selectItem itemLabel="Rua" itemValue="Rua" />  
                             <f:selectItem itemLabel="Rodivia" itemValue="Rodivia" />  
@@ -46,7 +46,7 @@
                             <f:selectItem itemLabel="Servidão" itemValue="Servidão" />  
                             <f:selectItem itemLabel="BR" itemValue="BR" />       
                         </p:selectOneMenu>
-                        <p:inputText id="logra"   size="51"  class="filtrar" value="#{ClienteMB.cliente.logradouro}"/>
+                        <p:inputText id="logra"   size="46"  class="filtrar" value="#{ClienteMB.cliente.logradouro}"/>
                         <p:inputMask id="numero"   size="16"  class="filtrar" value="#{ClienteMB.cliente.numero}" mask="?999999999"/>
                     </h:panelGrid>
                     <h:panelGrid columns="6" cellpadding="5">   
@@ -54,8 +54,8 @@
                         <p:outputLabel value="Bairro" for="bairro" class="left3"/>
                     </h:panelGrid>       
                     <h:panelGrid columns="6" cellpadding="5">   
-                        <p:inputText id="comple"  size="53" class="left1" value="#{ClienteMB.cliente.complemento}"/>
-                        <p:inputText id="bairro" value="#{ClienteMB.cliente.bairro}"  size="42" class="filtrar2"/>
+                        <p:inputText id="comple"  size="48" class="left1" value="#{ClienteMB.cliente.complemento}"/>
+                        <p:inputText id="bairro" value="#{ClienteMB.cliente.bairro}"  size="38" class="filtrar2"/>
                     </h:panelGrid> 
                     <h:panelGrid columns="3" cellpadding="5">
                         <p:outputLabel value="Cidade" for="cidade" class="left1"/>
@@ -63,8 +63,8 @@
                         <p:outputLabel value="CEP" for="cep" class="left"/>
                     </h:panelGrid>
                      <h:panelGrid columns="3" cellpadding="5">
-                         <p:inputText id="cidade" value="#{ClienteMB.cliente.cidade}"  size="45" class="left1"/>
-                         <p:selectOneMenu id="estado" value="#{ClienteMB.cliente.estado}" class="filtrar" style="width:140px">
+                         <p:inputText id="cidade" value="#{ClienteMB.cliente.cidade}"  size="41" class="left1"/>
+                         <p:selectOneMenu id="estado" value="#{ClienteMB.cliente.estado}" class="filtrar" style="width:135px">
                             <f:selectItem itemLabel="Selecione o Estado" itemValue="sn" noSelectionOption="true"/> 
                             <f:selectItem itemLabel="Acre" itemValue="AC" /> 
                             <f:selectItem itemLabel="Alagoas" itemValue="AL" /> 
@@ -94,7 +94,7 @@
                             <f:selectItem itemLabel="Sergipe" itemValue="SE" />  
                             <f:selectItem itemLabel="Tocantins" itemValue="TO" /> 
                         </p:selectOneMenu>
-                         <p:inputMask id="cep" size="14"  maxlength="9" class="filtrar2" value="#{ClienteMB.cliente.cep}" mask="99999-999"/>     
+                         <p:inputMask id="cep" size="15"  maxlength="9" class="filtrar2" value="#{ClienteMB.cliente.cep}" mask="99999-999"/>     
                     </h:panelGrid>
                     <br></br> 
                     <legend class="subtitulo">Dados do Contrato</legend>
@@ -103,10 +103,10 @@
                         <p:outputLabel value="Data Renovação" for="dataRenovacao" class="left5"/>
                     </h:panelGrid> 
                     <h:panelGrid columns="6" cellpadding="5">   
-                        <p:calendar id="primeiroContrato"  pattern="dd/MM/yyyy" mask="true" size="12" maxlength="14" class="left1" value="#{ClienteMB.cliente.datacontrato}">
+                        <p:calendar id="primeiroContrato"  pattern="dd/MM/yyyy" mask="true" size="14" maxlength="14" class="left1" value="#{ClienteMB.cliente.datacontrato}">
                             <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
                         </p:calendar>
-                        <p:calendar id="dataRenovacao"  pattern="dd/MM/yyyy" mask="true" size="12" maxlength="14" class="filtrar" value="#{ClienteMB.cliente.datarenovacao}" >
+                        <p:calendar id="dataRenovacao"  pattern="dd/MM/yyyy" mask="true" size="14" maxlength="14" class="filtrar" value="#{ClienteMB.cliente.datarenovacao}" >
                             <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
                         </p:calendar>
                     </h:panelGrid> 

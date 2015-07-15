@@ -11,6 +11,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author Kamila
@@ -44,6 +45,14 @@ public class UsuarioLogadoBean implements Serializable{
 
     public Cliente getCliente() {
         return cliente;
+    }
+
+    public AtividadeMB getAtividadeMB() {
+        return atividadeMB;
+    }
+
+    public void setAtividadeMB(AtividadeMB atividadeMB) {
+        this.atividadeMB = atividadeMB;
     }
 
     public void setCliente(Cliente cliente) {
