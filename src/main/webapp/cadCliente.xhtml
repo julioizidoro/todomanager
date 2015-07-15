@@ -98,7 +98,7 @@
                     </h:panelGrid>
                     <br></br> 
                     <legend class="subtitulo">Dados do Contrato</legend>
-                    <h:panelGrid columns="6" cellpadding="5">   
+                    <h:panelGrid columns="6" cellpadding="5" >   
                         <p:outputLabel value="Data 1º Contrato" for="primeiroContrato" class="left1"/>
                         <p:outputLabel value="Data Renovação" for="dataRenovacao" class="left5"/>
                     </h:panelGrid> 
@@ -132,9 +132,9 @@
                     
                     <h:panelGrid id="painelCombo" columns="6" cellpadding="5">   
                         <p:inputText id="contabilidadeH"  size="22" class="rightleft3" value="#{ClienteMB.valorcontabilidade}"  readonly="#{ClienteMB.contabilidade}" immediate="true" />
-                        <p:inputText id="financeiraH" value="#{ClienteMB.valorgestaofinanceira}"  size="19" class="rightFiltrar" readonly="#{ClienteMB.gestaofinanceira}" immediate="true"/>
+                        <p:inputText id="financeiraH" value="#{ClienteMB.valorgestaofinanceira}"  size="20" class="rightFiltrar" readonly="#{ClienteMB.gestaofinanceira}" immediate="true"/>
                         <p:inputText id="tercerizacaoH" value="#{ClienteMB.valortercerizacao}"  size="20" class="rightFiltrar" readonly="#{ClienteMB.tercerizacao}" immediate="true" />
-                        <p:inputText id="outrosH" value="#{ClienteMB.valoroutros}"  size="22" class="rightFiltrar" readonly="#{ClienteMB.outros}" immediate="true" />
+                        <p:inputText id="outrosH" value="#{ClienteMB.valoroutros}"  size="21" class="rightFiltrar" readonly="#{ClienteMB.outros}" immediate="true" />
                     </h:panelGrid> 
                     <br></br>
                     <br></br>
