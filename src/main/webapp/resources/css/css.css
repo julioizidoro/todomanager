@@ -283,7 +283,7 @@ button.botao1 {
 .filtrar2{
      position: relative;
     font-size:12px;
-    margin-left:100px;
+    margin-left:29%;
 }
 .filtrar3{
      position: relative;
@@ -291,14 +291,19 @@ button.botao1 {
     margin-left:120px;
 }
 .filtrar{
-     position: relative;
+    position: relative;
     font-size:12px;
-    margin-left:20px;
+    margin-left:13%;
+}
+.filtrar10{
+    position: relative;
+    font-size:12px;
+    margin-left:8%;
 }
 .filtrar4{
     position: relative;
     font-size:12px;
-    margin-left:60px;
+    margin-left:25.5%;
 }
 .filtrar5{
     margin-top:-30px;
@@ -317,6 +322,16 @@ button.botao1 {
     margin-top:-10px;
     font-size:11px;
     margin-left:20px;
+}
+.filtrar9{
+    position: relative;
+    font-size:12px;
+    margin-left:220%;
+}
+.filtrar11{
+     position: relative;
+    font-size:12px;
+    margin-left:48%;
 }
 .alinhaCentro{
     text-align:center;
