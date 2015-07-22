@@ -88,7 +88,7 @@
             <p:commandButton value="Fechar" icon=" ui-icon-close" class="botaoDialog" onclick="notificacao.hide();"/>   
         </p:dialog>
         
-        <p:dialog id="dialog_addTarefaparticular" header="Adicionar Tarafa Particular" widgetVar="addparticular" resizable="false"  class="dialog" minWidth= "120" minHeight= "25"  width="440px" >
+        <p:dialog id="dialog_addTarefaparticular" header="Adicionar Tarafa Particular" widgetVar="addparticular" resizable="false"  class="dialog" minWidth= "120" minHeight= "25"  width="37%" >
             <br></br>
             <p:outputLabel value="Título" class="filtrar"/>
             <p:outputLabel value="Data" class="left4"/>
@@ -110,7 +110,7 @@
             <p:commandButton value="Confirmar" icon="ui-icon-plusthick" class="filtrar" action="#{AtividadeMB.salvarParticular()}" onclick="addparticular.hide();" update="growl"/>
         </p:dialog>
         
-        <p:dialog id="dialog_addTarefa" header="Adicionar Tarafas" widgetVar="add" resizable="false"  class="dialog" minWidth= "120" minHeight= "25"  width="550px" >
+        <p:dialog id="dialog_addTarefa" header="Adicionar Tarafas" widgetVar="add" resizable="false"  class="dialog" minWidth= "120" minHeight= "25"  width="50%" >
             <br></br>
             <p:outputLabel value="Título" class="filtrar"/>
             <p:outputLabel value="Data" class="left3"/>
@@ -122,7 +122,7 @@
             <br></br><br></br>
             <p:outputLabel value="Depatamento" class="filtrar"/> 
             <p:outputLabel value="Sub-Depatamento" class="filtrar6"/> 
-            <p:outputLabel value="Cliente" class="filtrar4"/> 
+            <p:outputLabel value="Cliente" class="filtrar44"/> 
             <br></br><br></br>
             <p:selectOneMenu id="departamento" value="#{AtividadeMB.idDepartamento}" class="filtrar" style="width:135px">
                 <f:selectItem itemLabel="Selecione" itemValue="0"   />
@@ -139,7 +139,7 @@
             </p:selectOneMenu>
             <br></br><br></br>
             <p:outputLabel value="Prioridade" class="filtrar"/> 
-            <p:outputLabel value="Usuário Executor" class="filtrar2"/> 
+            <p:outputLabel value="Usuário Executor" class="filtrar22"/> 
             <br></br> <br></br>
             <p:selectOneMenu id="prioridade" value="#{AtividadeMB.atividades.prioridade}" class="filtrar" style="width:135px">
                 <f:selectItem itemLabel="Selecione" itemValue="sn" noSelectionOption="true"/> 
@@ -152,9 +152,11 @@
                 <f:selectItems value="#{AtividadeMB.listaUsuario}" var="usuarioselecionado" itemLabel="#{usuarioselecionado.nome}" itemValue="#{usuarioselecionado.idusuario}"/>
                 <p:ajax event="change" listener="#{AtividadeMB.gerarListaUsuarioBean()}" update="selecao" />
             </p:selectOneMenu><br></br> <br></br>
-            <p:dataTable id="selecao" var="selecaoUsuario" value="#{AtividadeMB.listaUsuarioBean}" class="dataGriddialog" editable="true" editMode="cell" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+            
+            <p:commandButton value="Confirmar" icon="ui-icon-plusthick" class="botaoDialog4" action="#{AtividadeMB.salvar()}" onclick="add.hide();" update="growl"/><br></br><br></br><br></br>
+            <p:dataTable id="selecao" var="selecaoUsuario" value="#{AtividadeMB.listaUsuarioBean}" class="dataGriddialogg" editable="true" editMode="cell" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
                          paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-                         paginator="true" rows="8"  rowIndexVar="rowIx">
+                         paginator="true" rows="5"  rowIndexVar="rowIx">
                 <p:column  style="width:30px;" styleClass="alinhaCentro">
                     <p:selectBooleanCheckbox value="#{selecaoUsuario.selecionado}"/>
                 </p:column>
@@ -163,8 +165,7 @@
                 </p:column>
             </p:dataTable>
             <br>  </br>
-            <p:commandButton value="Confirmar" icon="ui-icon-plusthick" class="botaoDialog" action="#{AtividadeMB.salvar()}" onclick="add.hide();" update="growl"/>
-        </p:dialog>
+            </p:dialog>
     </div>
     <br>  </br>
     <br>  </br>

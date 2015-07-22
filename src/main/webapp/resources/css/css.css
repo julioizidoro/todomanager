@@ -201,6 +201,11 @@ h1 {
     width: 492px;
     margin-left: 20px;
 }
+.dataGriddialogg{
+    font-size:12px;
+    width: 492px;
+    margin-left:80px;
+}
 .dataGriddialog2{
     font-size:12px;
     width: 300px;
@@ -285,6 +290,11 @@ button.botao1 {
     font-size:12px;
     margin-left:29%;
 }
+.filtrar22{
+     position: relative;
+    font-size:12px;
+    margin-left:15%;
+}
 .filtrar3{
      position: relative;
     font-size:12px;
@@ -304,6 +314,11 @@ button.botao1 {
     position: relative;
     font-size:12px;
     margin-left:25.5%;
+}
+.filtrar44{
+    position: relative;
+    font-size:12px;
+    margin-left:9%;
 }
 .filtrar5{
     margin-top:-30px;
@@ -658,9 +673,12 @@ button.contabilidade {
     font-size: 12px;
 }
 .botaoDialog{
-
     font-size: 12px;
     margin-left:18px;
+}
+.botaoDialog4{
+    font-size: 12px;
+    margin-left:72%;
 }
 ////
 .botaoDialogparticular{
