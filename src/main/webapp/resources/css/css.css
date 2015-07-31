@@ -5,7 +5,10 @@ body {
     min-width:1000px;
     max-width:1156px;
 }
-
+body2 {
+    font-family: tahoma;
+    background-color:#E0EEEE;
+}
 h1 {
     margin: 10px 20px 10px 20px;
 }
@@ -678,7 +681,7 @@ button.contabilidade {
 }
 .botaoDialog4{
     font-size: 12px;
-    margin-left:72%;
+    margin-left:10%;
 }
 ////
 .botaoDialogparticular{
@@ -754,7 +757,7 @@ button.contabilidade {
     border:#fff;
 }
 .letraPreta{
-    color: black;
+    color: #000;
     border:#fff;
 }
 .panelgrid4{

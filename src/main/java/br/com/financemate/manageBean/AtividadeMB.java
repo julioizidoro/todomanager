@@ -35,6 +35,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -541,6 +542,7 @@ public class AtividadeMB implements Serializable{
             atividades.setPrioridade("normal");
             gerarListaUsuarioBean();
             tipo=0;
+             RequestContext.getCurrentInstance().closeDialog("inicial");
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);
@@ -558,6 +560,7 @@ public class AtividadeMB implements Serializable{
             atividades.setPrazo(new Date());
             atividades.setPrioridade("normal");
             tipo=1;
+             RequestContext.getCurrentInstance().openDialog("cadastroTarefaParticular");
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);
@@ -664,7 +667,8 @@ public class AtividadeMB implements Serializable{
             FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null, new FacesMessage("Cadastrado com Sucesso", ""));
             atividadeMenu="dia";
-            return "inicial";
+            RequestContext.getCurrentInstance().closeDialog("inicial");
+            return "";
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);

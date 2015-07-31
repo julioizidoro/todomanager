@@ -36,8 +36,8 @@
                 <p:menuitem class="submenu" value="Usuário" action="#{MenuMB.usuario()}" update="growl"/>
                 <p:menuitem class="submenu" value="Perfil" action="#{MenuMB.perfil()}" update="growl"/>
             </p:submenu>
-            <p:menuitem value="Adicionar Tarefas" class="submenu2" action="#{AtividadeMB.novo()}" actionListener="#{AtividadeMB.gerarListaUsuarioBean()}" update="dialog_addTarefa" icon=" ui-icon-plus " oncomplete="PF('add').show()"  />
-            <p:menuitem value="Adicionar Tarefa Particular" class="submenu2" action="#{AtividadeMB.novoParticular()}" update="dialog_addTarefaparticular" icon="ui-icon-plus" oncomplete="PF('addparticular').show()"  />
+            <p:menuitem value="Adicionar Tarefas" class="submenu2" action="#{AtividadeMB.novo()}" actionListener="#{AtividadeMB.gerarListaUsuarioBean()}" icon=" ui-icon-plus " />
+            <p:menuitem value="Adicionar Tarefa Particular" class="submenu2" action="#{AtividadeMB.novoParticular()}" icon="ui-icon-plus"  />
             <p:menuitem    class="submenu3" icon="ui-icon-folder-open" value="#{MenuMB.quantidade}" oncomplete="PF('notificacao').show()"></p:menuitem>
         </p:menubar>
     </div>
