@@ -542,7 +542,7 @@ public class AtividadeMB implements Serializable{
             atividades.setPrioridade("normal");
             gerarListaUsuarioBean();
             tipo=0;
-             RequestContext.getCurrentInstance().closeDialog("inicial");
+             RequestContext.getCurrentInstance().openDialog("cadastroTarefa");
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);
@@ -616,7 +616,8 @@ public class AtividadeMB implements Serializable{
             FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null, new FacesMessage("Cadastrado com Sucesso", ""));
             atividadeMenu="dia";
-            return "inicial";
+             RequestContext.getCurrentInstance().closeDialog("inicial");
+            return "";
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);
@@ -1219,6 +1220,7 @@ public class AtividadeMB implements Serializable{
             idSubdepartamento = String.valueOf(listaAtividadesGeral.get(nLinha).getAtividades().getSubdepartamento().getIdsubdepartamento());
             gerarListaUsuarioBeanEditar(atividades.getIdatividades());
             idUsuario =String.valueOf(idExecutor);
+            RequestContext.getCurrentInstance().openDialog("editarTarefa");
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);

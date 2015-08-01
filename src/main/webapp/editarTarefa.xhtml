@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link href="resources/css/css2.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body class="body2">
+        <h:form id="cadastrotarefa" class="body2">
+            <title>Editar Tarefa</title>
+            <p:outputLabel value="Título" class="filtrar"/>
+            <p:outputLabel value="Data" class="left3"/>
+            <br></br><br></br>
+            <p:inputText value="#{AtividadeMB.atividades.nome}" size="46" class="filtrar"/>
+            <p:calendar id="prazo" size="18"  pattern="dd/MM/yyyy" mask="true"  maxlength="14" class="filtrar6" value="#{AtividadeMB.atividades.prazo}" >
+                <f:convertDateTime   pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+            </p:calendar>
+            <br></br><br></br>
+            <p:outputLabel value="Depatamento" class="filtrar"/> 
+            <p:outputLabel value="Sub-Depatamento" class="filtrar6"/> 
+            <p:outputLabel value="Cliente" class="filtrar44"/> 
+            <br></br><br></br>
+            <p:selectOneMenu id="departamento" value="#{AtividadeMB.idDepartamento}" class="filtrar" style="width:135px">
+                <f:selectItem itemLabel="Selecione" itemValue="0"   />
+                <f:selectItems value="#{AtividadeMB.listaDepartamento}" var="departamento" itemLabel="#{departamento.nome}" itemValue="#{departamento.iddepartamento}"/>
+                <p:ajax event="change" listener="#{AtividadeMB.gerarListaSubdepartamento()}" update="subdepartamento" />
+            </p:selectOneMenu>
+            <p:selectOneMenu id="subdepartamento" value="#{AtividadeMB.idSubdepartamento}" class="filtrar7" style="width:140px">
+                <f:selectItem itemLabel="Selecione" itemValue="0"   />
+                <f:selectItems value="#{AtividadeMB.listaSubdepartamento}" var="subdepartamentoSelecionado" itemLabel="#{subdepartamentoSelecionado.nome}" itemValue="#{subdepartamentoSelecionado.idsubdepartamento}"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu value="#{AtividadeMB.idCliente}" style="width:155px" class="filtrar7">
+                <f:selectItem itemLabel="Selecione" itemValue="0"   />
+                <f:selectItems value="#{AtividadeMB.listaCliente}" var="clienteSelecionado" itemLabel="#{clienteSelecionado.nomefantasia}" itemValue="#{clienteSelecionado.idcliente}"/>
+            </p:selectOneMenu>
+            <br></br><br></br>
+            <p:outputLabel value="Prioridade" class="filtrar"/> 
+            <p:outputLabel value="Usuário Executor" class="filtrar22"/> 
+            <br></br> <br></br>
+            <p:selectOneMenu id="prioridade" value="#{AtividadeMB.atividades.prioridade}" class="filtrar" style="width:135px">
+                <f:selectItem itemLabel="Selecione" itemValue="sn" noSelectionOption="true"/> 
+                <f:selectItem itemLabel="Normal" itemValue="normal" />
+                <f:selectItem itemLabel="Alta" itemValue="alta" />
+                <f:selectItem itemLabel="Urgente" itemValue="urgente" />
+            </p:selectOneMenu>
+            <p:selectOneMenu id="usuario" value="#{AtividadeMB.idUsuario}" class="filtrar7" style="width:318px">
+                <f:selectItem itemLabel="Selecione" itemValue="0"   />
+                <f:selectItems value="#{AtividadeMB.listaUsuario}" var="usuarioselecionado" itemLabel="#{usuarioselecionado.nome}" itemValue="#{usuarioselecionado.idusuario}"/>
+                <p:ajax event="change" listener="#{AtividadeMB.gerarListaUsuarioBean()}" update="selecao" />
+            </p:selectOneMenu><br></br>
+
+            <p:commandButton value="Confirmar" icon="ui-icon-plusthick" class="botaoDialog4" action="#{AtividadeMB.salvar()}" /><br></br><br></br>
+            <p:dataTable id="selecao" var="selecaoUsuario" value="#{AtividadeMB.listaUsuarioBean}" class="dataGriddialogg" editable="true" editMode="cell" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                         paginator="true" rows="5"  rowIndexVar="rowIx">
+                <p:column  style="width:30px;" styleClass="alinhaCentro">
+                    <p:selectBooleanCheckbox value="#{selecaoUsuario.selecionado}"/>
+                </p:column>
+                <p:column headerText="Usuário" style="width:170px;" styleClass="border">
+                    <h:outputText value="#{selecaoUsuario.usuario.nome}" />
+                </p:column>
+            </p:dataTable><br></br><br></br>
+        </h:form>
+    </h:body>
+
+</html>
