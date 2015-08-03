@@ -38,13 +38,21 @@
                         <p:outputLabel value="Número" for="numero"  class="left4"/>
                     </h:panelGrid>
                     <h:panelGrid columns="3" cellpadding="3">
-                        <p:selectOneMenu id="tipologra" value="#{ClienteMB.cliente.tipogradouro}" style="width:195px" class="left1">
+                        <p:selectOneMenu id="tipologra" value="#{ClienteMB.cliente.tipogradouro}" style="width:195px" class="left1" filter="true" filterMatchMode="startsWith">
                             <f:selectItem itemLabel="Selecione" itemValue="sn" noSelectionOption="true"/> 
                             <f:selectItem itemLabel="Rua" itemValue="Rua" />  
                             <f:selectItem itemLabel="Rodivia" itemValue="Rodivia" />  
                             <f:selectItem itemLabel="Estrada" itemValue="Estrada" />  
                             <f:selectItem itemLabel="Servidão" itemValue="Servidão" />  
                             <f:selectItem itemLabel="BR" itemValue="BR" />       
+                            <f:selectItem itemLabel="Alameda" itemValue="Alameda" />       
+                            <f:selectItem itemLabel="Avenida" itemValue="Avenida" />       
+                            <f:selectItem itemLabel="Largo" itemValue="Largo" />       
+                            <f:selectItem itemLabel="Praça" itemValue="Praça" />       
+                            <f:selectItem itemLabel="Quadra" itemValue="Quadra" />       
+                            <f:selectItem itemLabel="Travessa" itemValue="Travessa" />       
+                            <f:selectItem itemLabel="Viaduto" itemValue="Viaduto" />       
+                            
                         </p:selectOneMenu>
                         <p:inputText id="logra"   size="51"  class="filtrar10" value="#{ClienteMB.cliente.logradouro}"/>
                         <p:inputMask id="numero"   size="16"  class="filtrar10" value="#{ClienteMB.cliente.numero}" mask="?999999999"/>

@@ -617,7 +617,7 @@ public class AtividadeMB implements Serializable{
             context.addMessage(null, new FacesMessage("Cadastrado com Sucesso", ""));
             atividadeMenu="dia";
              RequestContext.getCurrentInstance().closeDialog("inicial");
-            return "";
+            return "inicial";
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);
@@ -669,7 +669,7 @@ public class AtividadeMB implements Serializable{
             context.addMessage(null, new FacesMessage("Cadastrado com Sucesso", ""));
             atividadeMenu="dia";
             RequestContext.getCurrentInstance().closeDialog("inicial");
-            return "";
+            return "inicial";
         }else{
             FacesMessage mensagem = new FacesMessage("Erro! ", "Acesso Negado");
             FacesContext.getCurrentInstance().addMessage(null, mensagem);
@@ -1400,7 +1400,14 @@ public class AtividadeMB implements Serializable{
             }else if (peridicidade.equalsIgnoreCase("anual")){
                 c.set(Calendar.YEAR, c.get(Calendar.YEAR) + 1);
             }
-            atividades.setPrazo(c.getTime());
+            Date data = c.getTime();
+            int diaSemana = Formatacao.diaSemana(c.getTime());
+            if (diaSemana == 1) {
+                data = Formatacao.SomarDiasData(data, 1);
+            } else if (diaSemana == 7) {
+                data = Formatacao.SomarDiasData(data, 2);
+            }
+            atividades.setPrazo(data);
             atividades = atividadeFacade.salvar(atividades);
             Atividadeusuario atividadeusuario = new Atividadeusuario();
             atividadeusuario.setAtividades(atividades);
@@ -1435,7 +1442,7 @@ public class AtividadeMB implements Serializable{
         data = Formatacao.SomarDiasData(data, 1);
         int diaSemana = Formatacao.diaSemana(data);
         if (diaSemana == 1) {
-            data = Formatacao.SomarDiasData(data, 2);
+            data = Formatacao.SomarDiasData(data, 1);
         } else if (diaSemana == 7) {
             data = Formatacao.SomarDiasData(data, 2);
         }
@@ -1461,6 +1468,12 @@ public class AtividadeMB implements Serializable{
     public void criarAtividadesSemanal(Rotinacliente rotinaCliente) {
         AtividadeFacade atividadeFacade = new AtividadeFacade();
         Date data = Formatacao.SomarDiasData(rotinaCliente.getData(), 7);
+        int diaSemana = Formatacao.diaSemana(data);
+        if (diaSemana == 1) {
+            data = Formatacao.SomarDiasData(data, 1);
+        } else if (diaSemana == 7) {
+            data = Formatacao.SomarDiasData(data, 2);
+        }
         Atividades atividades = new Atividades();
         atividades.setCliente(this.atividades.getCliente());
         atividades.setNome(this.atividades.getNome());

@@ -16,6 +16,7 @@
     <class>br.com.financemate.model.Subdepartamento</class>
     <class>br.com.financemate.model.Usuario</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <shared-cache-mode>NONE</shared-cache-mode>
     <properties/>
   </persistence-unit>
 </persistence>

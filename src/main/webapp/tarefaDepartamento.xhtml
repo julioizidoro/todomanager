@@ -34,7 +34,7 @@
                         <p:selectOneMenu id="departamentos" value="#{AtividadeMB.idDepartamento}" class="fonte" style="width:145px">
                             <f:selectItem itemLabel="Selecione" itemValue="0"   />
                             <f:selectItems value="#{AtividadeMB.listaDepartamento}" var="departamento" itemLabel="#{departamento.nome}" itemValue="#{departamento.iddepartamento}"/>
-                            <p:ajax event="change" listener="#{AtividadeMB.gerarListaSubdepartamento()}"  update="subdepartamento" />
+                            <p:ajax event="change" listener="#{AtividadeMB.gerarListaSubdepartamento()}"  update="subdepartamentos" />
                             <p:ajax event="change" listener="#{AtividadeMB.filtrarTarefasDepartamento()}"  update="@all" oncomplete="popAprovar.hide(); #{meuBean.objetos}" />
                         </p:selectOneMenu>
                         <p:selectOneMenu id="subdepartamentos" value="#{AtividadeMB.idSubdepartamento}" class="fonte" style="width:120px">
